@@ -7,6 +7,7 @@ import DoctorSearch from './doctor-search.js';
 
 $(document).ready(function(){
   $("#nameButton").click(function() {
+    $(".welcome").hide();
     $("#nameForm").show();
     $("#nameButton").hide();
     $("#conditionButton").hide();
@@ -58,6 +59,7 @@ $(document).ready(function(){
   });
 
   $("#conditionButton").click(function() {
+    $(".welcome").hide();
     $("#conditionForm").show();
     $("#nameButton").hide();
     $("#conditionButton").hide();
