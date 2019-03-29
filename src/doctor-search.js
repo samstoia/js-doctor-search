@@ -2,45 +2,50 @@ import $ from 'jquery';
 
 
 export default class DoctorSearch {
-  constructor() {
-    this.searchName = searchName;
-    this.searchCondition = searchCondition;
-    this.apiKey = process.env.exports.apiKey;
-    this.url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${searchName}&location=or-portland&user_key=${this.apiKey}`;
-    this.conditionUrl = `https://api.betterdoctor.com/2016-03-01/doctors?query=${searchCondition}&location=or-portland&user_key=${this.apiKey}`;
-  }
-
+  // constructor() {
+  //   this.searchName = searchName;
+  //   this.searchCondition = searchCondition;
+  //   this.apiKey = process.env.exports.apiKey;
+  //   this.url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${searchName}&location=or-portland&user_key=${this.apiKey}`;
+  //   this.conditionUrl = `https://api.betterdoctor.com/2016-03-01/doctors?query=${searchCondition}&location=or-portland&user_key=${this.apiKey}`;
+  // }
   getName(searchName) {
 
-  return new Promise(function(resolve, reject) {
-    let request = new XMLHttpRequest();
+    let url = "https://api.betterdoctor.com/2016-03-01/doctors?name=$" + searchName + "&location=or-portland&user_key=" + process.env.exports.apiKey;
 
-    request.onload = function() {
-      if (this.status === 200) {
-        resolve(request.response);
+    return new Promise(function(resolve, reject) {
+      let request = new XMLHttpRequest();
 
-      } else {
-        reject(Error(request.statusText));
+      request.onload = function() {
+        if (this.status === 200) {
+          resolve(request.response);
+
+        } else {
+          reject(Error(request.statusText));
+        }
       }
-    }
-    request.open("GET", this.url, true);
-    request.send();
-  });
+      request.open("GET", url, true);
+      request.send();
+    });
+  }
 
   getCondition(searchCondition) {
 
-  return new Promise(function(resolve, reject) {
-    let request = new XMLHttpRequest();
+    let conditionUrl = "https://api.betterdoctor.com/2016-03-01/doctors?query=" + searchCondition + "&location=or-portland&user_key=" + process.env.exports.apiKey;
 
-    request.onload = function() {
-      if (this.status === 200) {
-        resolve(request.response);
+    return new Promise(function(resolve, reject) {
+      let request = new XMLHttpRequest();
 
-      } else {
-        reject(Error(request.statusText));
+      request.onload = function() {
+        if (this.status === 200) {
+          resolve(request.response);
+
+        } else {
+          reject(Error(request.statusText));
+        }
       }
-    }
-    request.open("GET", this.conditionUrl, true);
-    request.send();
-  });
+      request.open("GET", conditionUrl, true);
+      request.send();
+    });
+  }
 }
