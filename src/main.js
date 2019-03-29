@@ -55,8 +55,6 @@ $(document).ready(function(){
       $("#searching").hide();
       $("#bike-info").show();
     }
-  }, function(error) {
-      $('.nameApiError').text(`There was an error processing your request: ${error.message}`);
     });
   });
 
@@ -109,8 +107,6 @@ $(document).ready(function(){
       $("#searching").hide();
       $("#bike-info").show();
     }
-  }, function(error) {
-        $('.conditionApiError').text(`There was an error processing your request: ${error.message}`);
     });
   });
 });

@@ -16,6 +16,7 @@ export default class DoctorSearch {
 
         } else {
           reject(Error(request.statusText));
+          $('.nameApiError').text(`There was an error processing your request: ${error.message}`);
         }
       }
       request.open("GET", url, true);
@@ -36,6 +37,7 @@ export default class DoctorSearch {
 
         } else {
           reject(Error(request.statusText));
+          $('.conditionApiError').text(`There was an error processing your request: ${error.message}`);
         }
       }
       request.open("GET", conditionUrl, true);
