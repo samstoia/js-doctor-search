@@ -21,9 +21,9 @@ $(document).ready(function(){
     let promise = doctorSearch.getName(searchName);
 
     promise.then(function(response) {
-      $('#doctor-info').empty();
+      $('#doctor-name-info').empty();
       let body = JSON.parse(response);
-      var table = $('#doctor-info');
+      var table = $('#doctor-name-info');
 
       if (body.data.length < 1) {
         $("#noResults").text("Your search returned 0 results")
@@ -64,9 +64,9 @@ $(document).ready(function(){
     let promise = doctorSearch.getCondition(searchCondition);
 
     promise.then(function(response) {
-      $('#doctor-info').empty();
+      $('#doctor-condition-info').empty();
       let body = JSON.parse(response);
-      var table = $('#doctor-info');
+      var table = $('#doctor-condition-info');
 
       if (body.data.length < 1) {
         $("#noResults").text("Your search returned 0 results")
