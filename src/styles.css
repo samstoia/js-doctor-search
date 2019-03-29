@@ -1,3 +1,16 @@
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/905874/pexels-photo-905874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+table {
+  font-weight: 600;
+}
 
 #nameForm, #conditionForm{
   display: none;
