@@ -11,10 +11,14 @@
   margin-bottom: 20px;
 }
 
-table, #nameForm, .center, #conditionForm {
+#nameForm, .center, #conditionForm {
   text-align: center;
 }
 
 tr, td, th {
   border: 2px solid black;
+}
+
+td {
+  max-width: 100;
 }

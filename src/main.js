@@ -35,12 +35,20 @@ $(document).ready(function(){
         if (website === undefined) {
           website = "No Website Listed"
         }
+
+        let acceptingPatients = doctor.practices[0].accepts_new_patients;
+        if (acceptingPatients === true) {
+          acceptingPatients = "Yes";
+        } else {
+          acceptingPatients = "No";
+        }
+
         table.append('<tr><td>' + doctor.profile.first_name + '</td>' +
                          '<td>' + doctor.profile.last_name + '</td>' +
                          '<td>' + "Street: " + doctor.practices[0].visit_address.street + '<br>' + "Zip: " + doctor.practices[0].visit_address.zip + '</td>' +
                          '<td>' + doctor.practices[0].phones[0].number + '</td>' +
                          '<td>' + website + '</td>' +
-                         '<td>' + doctor.practices[0].accepts_new_patients + '</td>' +
+                         '<td>' + acceptingPatients + '</td>' +
                       '</tr>');
       });
       $("#searching").hide();
