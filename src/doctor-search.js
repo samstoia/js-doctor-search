@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 
 export default class DoctorSearch {
-  constructor(searchName, searchCondition) {
+  constructor() {
     this.searchName = searchName;
     this.searchCondition = searchCondition;
     this.apiKey = process.env.exports.apiKey;
@@ -27,7 +27,7 @@ export default class DoctorSearch {
     request.send();
   });
 
-  getCondition(searchName) {
+  getCondition(searchCondition) {
 
   return new Promise(function(resolve, reject) {
     let request = new XMLHttpRequest();
