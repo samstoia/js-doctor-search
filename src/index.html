@@ -6,7 +6,7 @@
   <body>
 
     <div class="welcome">
-      <h1><a href="/index.html">Find Your Doctor</a></h1>
+      <h1>Find Your Doctor</h1>
       <button type="button" id="nameButton">Search by Doctor Name</button>
 
       <button type="button" id="conditionButton">Search by Condition/Doctor Specialty</button>
@@ -22,8 +22,11 @@
 
     <br>
 
-    <div id="noResults">
-    </div>
+    <h4 id=""></h3>
+
+    <h4 class="noNameResults"></h4>
+
+    <h4 class="nameApiError"></h4>
 
     <div class="container">
       <table align="center" id="doctor-name-info">
@@ -39,8 +42,11 @@
        <button type="submit">Submit</button>
      </form>
      <br>
-     <div id="noResults">
-     </div>
+
+     <h4 class="noConditionResults"></h4>
+
+     <h4 class="conditionApiError"></h4>
+
      <div class="container">
        <table align="center" id="doctor-condition-info">
 

@@ -27,7 +27,7 @@ $(document).ready(function(){
       var table = $('#doctor-name-info');
 
       if (body.data.length < 1) {
-        $("#noResults").text("Your search returned 0 results")
+        $(".noNameResults").text("Your search returned 0 results")
       } else {
 
       table.append('<thead><tr><th>First Name</th><th>Last Name</th><th>Address</th><th>Phone Number</th><th>Website</th><th>Accepting Patients?</th></tr></thead>');
@@ -55,6 +55,8 @@ $(document).ready(function(){
       $("#searching").hide();
       $("#bike-info").show();
     }
+  }, function(error) {
+      $('.nameApiError').text(`There was an error processing your request: ${error.message}`);
     });
   });
 
@@ -79,7 +81,7 @@ $(document).ready(function(){
       var table = $('#doctor-condition-info');
 
       if (body.data.length < 1) {
-        $("#noResults").text("Your search returned 0 results")
+        $(".noConditionResults").text("Your search returned 0 results")
       } else {
 
       table.append('<thead><tr><th>First Name</th><th>Last Name</th><th>Address</th><th>Phone Number</th><th>Website</th><th>Accepting Patients?</th></tr></thead>');
@@ -107,6 +109,8 @@ $(document).ready(function(){
       $("#searching").hide();
       $("#bike-info").show();
     }
+  }, function(error) {
+        $('.conditionApiError').text(`There was an error processing your request: ${error.message}`);
     });
   });
 });
